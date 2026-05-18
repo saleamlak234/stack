@@ -98,11 +98,11 @@ export default function Home() {
                 <div className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="text-center">
                         <h1 className="mb-6 text-4xl font-bold md:text-6xl animate-fade-in">
-                            Welcome to <span className="text-gold-400">Saham Trading</span>
+                            Welcome to <span className="text-gold-400">Colgate-Palmolive</span>
                         </h1>
                         <p className="max-w-3xl mx-auto mb-8 text-xl md:text-2xl text-primary-100 animate-slide-up">
-                            Join Ethiopia's leading stock market investment platform with guaranteed returns
-                            and powerful MLM earning opportunities
+                            A global consumer products company specializing in oral care, personal care,
+                            home care, and trusted household brands built over 200 years
                         </p>
 
                         <div className="flex flex-col items-center justify-center gap-4 mb-12 sm:flex-row">
@@ -157,11 +157,11 @@ export default function Home() {
                 <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="mb-16 text-center">
                         <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-                            Why Choose Saham Trading?
+                            About Colgate-Palmolive
                         </h2>
                         <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                            We offer the most comprehensive investment platform with guaranteed returns
-                            and multiple earning opportunities
+                            Colgate-Palmolive is a global leader in consumer products, delivering trusted
+                            oral care, personal care and home care brands that improve everyday life.
                         </p>
                     </div>
 
@@ -344,158 +344,135 @@ export default function Home() {
                     {/* Commission Table */}
                     <div className="mb-12 overflow-hidden bg-white shadow-xl rounded-2xl">
                         <div className="p-6 text-center bg-gradient-to-r from-primary-600 to-primary-800">
-                            <h3 className="text-2xl font-bold text-white">Complete Investment & Commission Breakdown</h3>
-                            <p className="mt-2 text-primary-100">Daily returns and multi-level commission structure</p>
+                            <h3 className="text-2xl font-bold text-white">Deposit Packages & Daily Commissions</h3>
+                            <p className="mt-2 text-primary-100">Standard deposit packages with fixed commissions and daily payout values.</p>
                         </div>
 
                         <div className="overflow-x-auto">
-                            <table className="w-full">
+                            <table className="w-full min-w-[900px]">
                                 <thead className="bg-gray-50">
                                     <tr>
                                         <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
-                                            Package
+                                            Level
                                         </th>
                                         <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
-                                            Investment<br />
-                                            <span className="text-primary-600">(ETB)</span>
+                                            Deposit package
                                         </th>
                                         <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
-                                            Daily income<br />
-                                            {/* <span className="text-green-600">(15%)</span> */}
+                                            8% Comm
                                         </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-blue-700 uppercase border-r border-gray-200">
-                                            direct commission<br />
-                                            <span className="text-blue-600">(8%)</span>
+                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
+                                            6% Comm
                                         </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-green-700 uppercase border-r border-gray-200">
-                                            second generation Commissions<br />
-                                            <span className="text-green-600">(4%)</span>
+                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
+                                            4% Comm
                                         </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-purple-700 uppercase border-r border-gray-200">third generation commissions<br />
-
-                                            <span className="text-purple-600">(2%)</span>
+                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
+                                            Daily Comm
                                         </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-orange-700 uppercase border-r border-gray-200">
-                                            4th generation commissions<br />
-                                            <span className="text-orange-600">(1%)</span>
+                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
+                                            Daily 5%
                                         </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center uppercase border-r border-gray-200 text-gold-700">
-                                            team daily commissions<br />
-                                            <span className="text-gold-600">(8%)</span>
+                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase border-r border-gray-200">
+                                            Daily 3%
                                         </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center uppercase border-r border-gray-200 text-gold-700">
-                                            team daily commissions<br />
-                                            <span className="text-gold-600">(4%)</span>
-                                        </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center uppercase border-r border-gray-200 text-gold-700">
-                                            team daily commissions<br />
-                                            <span className="text-gold-600">(2%)</span>
-                                        </th>
-                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center uppercase text-gold-700">
-                                            team daily commissions<br />
-                                            <span className="text-gold-600">(1%)</span>
+                                        <th className="px-4 py-4 text-xs font-semibold tracking-wider text-center text-gray-700 uppercase">
+                                            Daily 1%
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
-                                    {/* Example rows */}
                                     <tr className="transition-colors hover:bg-gray-50">
-                                        <td className="px-4 py-4 font-semibold text-center text-gray-900 border-r border-gray-200">1</td>
-                                        <td className="px-4 py-4 font-bold text-center border-r border-gray-200 text-primary-600">3,000</td>
-                                        <td className="px-4 py-4 font-bold text-center text-green-600 border-r border-gray-200">50</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-blue-600 border-r border-gray-200">240</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-green-600 border-r border-gray-200">120</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-purple-600 border-r border-gray-200">60</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-orange-600 border-r border-gray-200">30</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">4</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">2</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">1</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-gold-600">0.5</td>
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">1</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">2,500</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">200</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">150</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">100</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">80</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">4</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">2.4</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">0.8</td>
                                     </tr>
                                     <tr className="transition-colors hover:bg-gray-50">
-                                        <td className="px-4 py-4 font-semibold text-center text-gray-900 border-r border-gray-200">2</td>
-                                        <td className="px-4 py-4 font-bold text-center border-r border-gray-200 text-primary-600">6000</td>
-                                        <td className="px-4 py-4 font-bold text-center text-green-600 border-r border-gray-200">100</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-blue-600 border-r border-gray-200">480</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-green-600 border-r border-gray-200">240</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-purple-600 border-r border-gray-200">120</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-orange-600 border-r border-gray-200">60</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">8</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">4</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">2</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-gold-600">1</td>
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">2</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">5,000</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">400</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">300</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">200</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">162</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">8.1</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">4.86</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">1.62</td>
                                     </tr>
                                     <tr className="transition-colors hover:bg-gray-50">
-                                        <td className="px-4 py-4 font-semibold text-center text-gray-900 border-r border-gray-200">3</td>
-                                        <td className="px-4 py-4 font-bold text-center border-r border-gray-200 text-primary-600">12000</td>
-                                        <td className="px-4 py-4 font-bold text-center text-green-600 border-r border-gray-200">200</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-blue-600 border-r border-gray-200">960</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-green-600 border-r border-gray-200">480</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-purple-600 border-r border-gray-200">240</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-orange-600 border-r border-gray-200">120</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">16</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">8</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">4</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-gold-600">2</td>
-                                    </tr>
-
-                                    <tr className="transition-colors hover:bg-gray-50">
-                                        <td className="px-4 py-4 font-semibold text-center text-gray-900 border-r border-gray-200">4</td>
-                                        <td className="px-4 py-4 font-bold text-center border-r border-gray-200 text-primary-600">24000</td>
-                                        <td className="px-4 py-4 font-bold text-center text-green-600 border-r border-gray-200">400</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-blue-600 border-r border-gray-200">1920</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-green-600 border-r border-gray-200">960</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-purple-600 border-r border-gray-200">480</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-orange-600 border-r border-gray-200">240</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">32</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">16</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">8</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-gold-600">4</td>
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">3</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">10,000</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">800</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">600</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">400</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">330</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">16.1</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">9.9</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">3.3</td>
                                     </tr>
                                     <tr className="transition-colors hover:bg-gray-50">
-                                        <td className="px-4 py-4 font-semibold text-center text-gray-900 border-r border-gray-200">5</td>
-                                        <td className="px-4 py-4 font-bold text-center border-r border-gray-200 text-primary-600">48000</td>
-                                        <td className="px-4 py-4 font-bold text-center text-green-600 border-r border-gray-200">800</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-blue-600 border-r border-gray-200">3840</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-green-600 border-r border-gray-200">960</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-purple-600 border-r border-gray-200">480</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-orange-600 border-r border-gray-200">240</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">64</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">32</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">16</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-gold-600">8</td>
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">4</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">20,000</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">1,600</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">1,200</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">800</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">670</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">33.5</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">20.1</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">6.7</td>
                                     </tr>
                                     <tr className="transition-colors hover:bg-gray-50">
-                                        <td className="px-4 py-4 font-semibold text-center text-gray-900 border-r border-gray-200">6</td>
-                                        <td className="px-4 py-4 font-bold text-center border-r border-gray-200 text-primary-600">96000</td>
-                                        <td className="px-4 py-4 font-bold text-center text-green-600 border-r border-gray-200">1600</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-blue-600 border-r border-gray-200">7680</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-green-600 border-r border-gray-200">3840</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-purple-600 border-r border-gray-200">1920</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-orange-600 border-r border-gray-200">960</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">128</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">64</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">32</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-gold-600">16</td>
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">5</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">40,000</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">3,200</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">2,400</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">1,600</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">1,350</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">67.5</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">40.5</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">13.5</td>
                                     </tr>
                                     <tr className="transition-colors hover:bg-gray-50">
-                                        <td className="px-4 py-4 font-semibold text-center text-gray-900 border-r border-gray-200">7</td>
-                                        <td className="px-4 py-4 font-bold text-center border-r border-gray-200 text-primary-600">192000</td>
-                                        <td className="px-4 py-4 font-bold text-center text-green-600 border-r border-gray-200">3200</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-blue-600 border-r border-gray-200">15360</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-green-600 border-r border-gray-200">7680</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-purple-600 border-r border-gray-200">3840</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-orange-600 border-r border-gray-200">1920</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">256</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">128</td>
-                                        <td className="px-4 py-4 font-semibold text-center border-r border-gray-200 text-gold-600">64</td>
-                                        <td className="px-4 py-4 font-semibold text-center text-gold-600">32</td>
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">6</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">80,000</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">6,400</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">4,800</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">3,200</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">2,750</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">137.5</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">82.5</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">13.5</td>
                                     </tr>
-                                    {/* Add more rows as needed */}
+                                    <tr className="transition-colors hover:bg-gray-50">
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">7</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">160,000</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">12,800</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">9,600</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">6,400</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">5,520</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">276</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">165.6</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">55.2</td>
+                                    </tr>
+                                    <tr className="transition-colors hover:bg-gray-50">
+                                        <td className="px-4 py-4 text-center text-gray-900 border-r border-gray-200">8</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-primary-600">320,000</td>
+                                        <td className="px-4 py-4 text-center text-blue-600 border-r border-gray-200">25,600</td>
+                                        <td className="px-4 py-4 text-center text-green-600 border-r border-gray-200">19,200</td>
+                                        <td className="px-4 py-4 text-center text-purple-600 border-r border-gray-200">12,800</td>
+                                        <td className="px-4 py-4 text-center text-orange-600 border-r border-gray-200">11,040</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">552</td>
+                                        <td className="px-4 py-4 text-center border-r border-gray-200 text-gold-600">331.2</td>
+                                        <td className="px-4 py-4 text-center text-gold-600">110.4</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        {/* The following div is now correctly placed outside the table */}
                         <div className="mt-12 text-center">
                             <div className="max-w-2xl p-8 mx-auto bg-gradient-to-r from-gold-100 to-gold-50 rounded-2xl">
                                 <Award className="w-12 h-12 mx-auto mb-4 text-gold-600" />
@@ -517,8 +494,8 @@ export default function Home() {
                         Ready to Start Building Wealth?
                     </h2>
                     <p className="mb-8 text-xl text-primary-100">
-                        Join thousands of successful investors who are already earning with Saham Trading.
-                        Start with any package and begin your journey to financial freedom.
+                        Join millions of customers who trust Colgate-Palmolive products worldwide.
+                        Discover our trusted brands and how they make everyday life better.
                     </p>
 
                     {!user ? (

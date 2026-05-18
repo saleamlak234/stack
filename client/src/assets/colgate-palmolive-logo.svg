@@ -1,0 +1,7 @@
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="60" rx="12" fill="#E51F26"/>
+  <text x="120" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">
+    Colgate-Palmolive
+  </text>
+  <path d="M28 20H127" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+</svg>

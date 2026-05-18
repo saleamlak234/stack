@@ -45,35 +45,7 @@ router.get("/stats", checkAdminPermission("admin"), async (req, res) => {
     const totalUsers = await User.countDocuments();
     const activeUsers = await User.countDocuments({ isActive: true });
 
-    // Helper to get start and end of day/week/month
-    // function getPeriodRange(period) {
-    //   const now = new Date();
-    //   let start, end;
-    //   if (period === "day") {
-    //     start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    //     end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    //   } else if (period === "week") {
-    //     const day = now.getDay();
-    //     start = new Date(
-    //       now.getFullYear(),
-    //       now.getMonth(),
-    //       now.getDate() - day,
-    //     );
-    //     end = new Date(
-    //       now.getFullYear(),
-    //       now.getMonth(),
-    //       now.getDate() + (7 - day),
-    //     );
-    //   } else if (period === "month") {
-    //     start = new Date(now.getFullYear(), now.getMonth(), 1);
-    //     end = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-    //   }
-    //   return { start, end };
-    // }
 
-    // Removed legacy summary helper that included withdrawal totals.
-    // const weekly = await getTotals("week");
-    // const monthly = await getTotals("month");
 
     // Admin's Total Deposit = Admin's own deposits + deposits approved by admin for others + upline commissions
 

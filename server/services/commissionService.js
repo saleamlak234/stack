@@ -1,15 +1,3 @@
-/**
- * Commission Service - Handles deposit approvals, commissions, and pending credit transfers
- *
- * This service enforces a manual credit approval model:
- * - Commissions are paid immediately to available uplines (8%, 6%, 4%).
- * - Remaining credit is tracked separately as pending upline credit.
- * - Credit does not automatically move upward or reduce user balances.
- * - Users submit "Credit Payment" deposits for their pending credit amounts.
- * - The direct upline approves that payment and the remaining credit is forwarded upward.
- * - Admin direct-child approvals update totalDeposits instead of automatically applying balance changes.
- */
-
 const User = require("../models/User");
 const Commission = require("../models/Commission");
 const CreditTransfer = require("../models/CreditTransfer");

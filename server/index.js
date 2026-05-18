@@ -46,7 +46,7 @@ const authMiddleware = require("./middleware/auth");
 const adminMiddleware = require("./middleware/admin");
 
 // Import jobs
-require("./jobs/monthlyEarnings");
+// require("./jobs/monthlyEarnings");
 require("./jobs/vipBonuses");
 require("./jobs/dailyReturns");
 require("./jobs/creditPenalties");

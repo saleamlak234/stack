@@ -12,11 +12,11 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <TrendingUp className="w-8 h-8 text-primary-400" />
-              <span className="text-xl font-bold">Saham Trading</span>
+              <span className="text-xl font-bold">Colgate-Palmolive</span>
             </div>
             <p className="text-sm text-gray-300">
-              Professional stock market investment platform with MLM opportunities.
-              Join thousands of successful investors building wealth through our platform.
+              Colgate-Palmolive is a global consumer products company offering trusted oral care,
+              personal care and home care brands that improve everyday life.
             </p>
             <div className="flex space-x-4">
               <a
@@ -107,7 +107,7 @@ export default function Footer() {
                   {env.COMPANY_ADDRESS}
                 </a>
               </div>
-      
+
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function Footer() {
         <div className="pt-8 mt-8 text-center border-t border-gray-800">
           <div className="flex flex-col items-center justify-between md:flex-row">
             <p className="text-sm text-gray-400">
-              © 2024 Saham Trading. All rights reserved.
+              © 2024 Colgate-Palmolive. All rights reserved.
             </p>
             <div className="flex mt-4 space-x-6 md:mt-0">
               <a href="#" className="text-sm text-gray-400 transition-colors hover:text-white">
