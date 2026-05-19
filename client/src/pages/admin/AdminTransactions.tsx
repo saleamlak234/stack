@@ -184,6 +184,15 @@ export default function AdminTransactions() {
     }
   };
 
+  const getTransactionLabel = (transaction: Transaction) => {
+    if (transaction.type === 'deposit') {
+      const baseLabel = transaction.package || 'Deposit';
+      const isUpgrade = Boolean(transaction.upgradedFrom || transaction.upgradedTo);
+      return isUpgrade ? `${baseLabel} (Upgrade)` : baseLabel;
+    }
+    return 'Credit Payment';
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
@@ -336,7 +345,7 @@ export default function AdminTransactions() {
                         </div>
                         <div>
                           <div className="text-sm font-medium text-gray-900 capitalize">
-                            {transaction.type === 'credit_payment' ? 'Credit Payment' : transaction.type}
+                            {getTransactionLabel(transaction)}
                           </div>
                           <div className="text-sm text-gray-500">
                             {transaction.package || transaction.paymentMethod}
@@ -469,7 +478,10 @@ export default function AdminTransactions() {
                       )}
                       <div>
                         <label className="block text-sm font-medium text-gray-700">Package</label>
-                        <p className="text-gray-900">{selectedTransaction.package || 'Standard Deposit'}</p>
+                        <p className="text-gray-900">
+                          {selectedTransaction.package || 'Standard Deposit'}
+                          {selectedTransaction.upgradedFrom || selectedTransaction.upgradedTo ? ' (Upgrade)' : ''}
+                        </p>
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700">Payment Method</label>
@@ -478,7 +490,7 @@ export default function AdminTransactions() {
                       {selectedTransaction.pendingCredit ? (
                         <div>
                           <label className="block text-sm font-medium text-gray-700">Pending Upline Credit</label>
-                          <p className="text-red-600 font-semibold">
+                          <p className="font-semibold text-red-600">
                             {selectedTransaction.pendingCredit.toLocaleString()} ETB
                           </p>
                         </div>
@@ -569,7 +581,7 @@ export default function AdminTransactions() {
                       </div>
                     )}
                   {selectedTransaction.status === 'pending' && selectedTransaction.type === 'credit_payment' && !selectedTransaction.canApproveCreditPayment && (
-                    <div className="p-4 rounded-lg bg-yellow-50 border border-yellow-200">
+                    <div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
                       <p className="text-sm text-yellow-900">
                         This credit payment request must be approved by the user's direct referrer, not by admin.
                       </p>

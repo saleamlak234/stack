@@ -50,13 +50,16 @@ interface User {
 export default function AdminDashboard() {
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [loading, setLoading] = useState(true);
-  const [summary, setSummary] = useState<{ totalDeposit: number } | null>(null);
-  const [summaryPeriod, setSummaryPeriod] = useState<'today' | 'week' | 'month' | 'all'>('today');
+  const [depositSummary, setDepositSummary] = useState<
+    | { today: number; week: number; month: number }
+    | null
+  >(null);
   const [summaryLoading, setSummaryLoading] = useState(false);
   const [summaryError, setSummaryError] = useState("");
 
   useEffect(() => {
     fetchAdminStats();
+    fetchDepositSummary();
   }, []);
 
   const fetchAdminStats = async () => {
@@ -70,23 +73,28 @@ export default function AdminDashboard() {
     }
   };
 
-  const fetchSummary = async (period: string) => {
+  const fetchDepositSummary = async () => {
     setSummaryLoading(true);
     setSummaryError("");
     try {
-      const res = await axios.get(`/admin/transaction-summary?period=${period}`);
-      setSummary(res.data);
-    } catch (e) {
-      setSummaryError("Failed to fetch summary");
-      setSummary(null);
+      const [todayRes, weekRes, monthRes] = await Promise.all([
+        axios.get('/admin/transaction-summary?period=today'),
+        axios.get('/admin/transaction-summary?period=week'),
+        axios.get('/admin/transaction-summary?period=month'),
+      ]);
+      setDepositSummary({
+        today: todayRes.data.totalDeposit || 0,
+        week: weekRes.data.totalDeposit || 0,
+        month: monthRes.data.totalDeposit || 0,
+      });
+    } catch (error) {
+      console.error('Failed to fetch deposit summary:', error);
+      setSummaryError('Failed to load deposit summaries');
+      setDepositSummary(null);
     } finally {
       setSummaryLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchSummary(summaryPeriod);
-  }, [summaryPeriod]);
 
   const handleUserStatusToggle = async (userId: string, currentStatus: boolean) => {
     try {
@@ -107,30 +115,37 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen py-8 bg-gray-50">
-      {/* Transaction Summary Widget */}
-      <div className="mb-6">
-        <div className="flex items-center space-x-4">
-          <span className="font-semibold">Transaction Summary:</span>
-          <select
-            value={summaryPeriod}
-            onChange={e => setSummaryPeriod(e.target.value as any)}
-            className="px-2 py-1 border rounded"
-          >
-            <option value="today">Today</option>
-            <option value="week">This Week</option>
-            <option value="month">This Month</option>
-            <option value="all">All Time</option>
-          </select>
-        </div>
+      {/* Deposit Summary Cards */}
+      <div className="mb-6 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h2 className="mb-4 text-xl font-semibold text-gray-900">Deposit Summaries</h2>
         {summaryLoading ? (
-          <div>Loading...</div>
+          <div>Loading deposit summaries...</div>
         ) : summaryError ? (
           <div className="text-red-600">{summaryError}</div>
-        ) : summary ? (
-          <div className="flex mt-2 space-x-8">
-            <div>Total Deposit: <span className="font-bold">{summary.totalDeposit.toLocaleString()} ETB</span></div>
+        ) : depositSummary ? (
+          <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-3">
+            <div className="p-6 bg-white border border-gray-200 shadow-sm rounded-xl">
+              <p className="text-sm text-gray-600">Daily Total Deposits</p>
+              <p className="mt-3 text-3xl font-bold text-gray-900">
+                {depositSummary.today.toLocaleString()} ETB
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-gray-200 shadow-sm rounded-xl">
+              <p className="text-sm text-gray-600">Weekly Total Deposits</p>
+              <p className="mt-3 text-3xl font-bold text-gray-900">
+                {depositSummary.week.toLocaleString()} ETB
+              </p>
+            </div>
+            <div className="p-6 bg-white border border-gray-200 shadow-sm rounded-xl">
+              <p className="text-sm text-gray-600">Monthly Total Deposits</p>
+              <p className="mt-3 text-3xl font-bold text-gray-900">
+                {depositSummary.month.toLocaleString()} ETB
+              </p>
+            </div>
           </div>
-        ) : null}
+        ) : (
+          <div className="text-gray-600">No deposit summary data available.</div>
+        )}
       </div>
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
