@@ -38,14 +38,39 @@ const checkAdminPermission = (requiredRole) => {
   };
 };
 
+async function getAdminTotalDeposit(adminId, dateFilter = {}) {
+  const [result] = await Deposit.aggregate([
+    { $match: { status: "completed", ...dateFilter } },
+    {
+      $lookup: {
+        from: "users",
+        localField: "user",
+        foreignField: "_id",
+        as: "userDoc",
+      },
+    },
+    { $unwind: "$userDoc" },
+    {
+      $match: {
+        $or: [
+          { user: adminId },
+          { "userDoc.referredBy": adminId },
+          { processedBy: adminId },
+        ],
+      },
+    },
+    { $group: { _id: null, total: { $sum: "$amount" } } },
+  ]);
+
+  return result?.total || 0;
+}
+
 // Get admin dashboard statistics
 router.get("/stats", checkAdminPermission("admin"), async (req, res) => {
   try {
     // User statistics
     const totalUsers = await User.countDocuments();
     const activeUsers = await User.countDocuments({ isActive: true });
-
-
 
     // Admin's Total Deposit = Admin's own deposits + deposits approved by admin for others + upline commissions
 
@@ -725,14 +750,19 @@ router.get(
           break;
       }
 
-      // Aggregate deposits
-      const [depositResult] = await Deposit.aggregate([
+      // Platform total deposits (all completed deposits)
+      const [platformDepositResult] = await Deposit.aggregate([
         { $match: { status: "completed", ...dateFilter } },
         { $group: { _id: null, total: { $sum: "$amount" } } },
       ]);
 
-      const totalDeposit = depositResult ? depositResult.total : 0;
-      res.json({ totalDeposit });
+      const platformTotalDeposit = platformDepositResult
+        ? platformDepositResult.total
+        : 0;
+
+      const totalDeposit = await getAdminTotalDeposit(req.user._id, dateFilter);
+
+      res.json({ totalDeposit, platformTotalDeposit });
     } catch (error) {
       console.error("Get transaction summary error:", error);
       res
